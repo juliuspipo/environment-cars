@@ -1,0 +1,5 @@
+.header-container
+  background-color red
+  &.child-container
+    background-color green
+    with 500px

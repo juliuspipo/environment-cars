@@ -1,5 +1,4 @@
-.container
+.aside-container
   background-color red
-
-  &.puerta
+  &.header
     background-color green

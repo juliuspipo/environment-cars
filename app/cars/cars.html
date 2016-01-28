@@ -1,26 +1,53 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="ProjectName">
+<html lang="es" ng-app="cars">
   <head>
     <meta charset="utf-8">
-    <title>Project Name</title>
+    <title>Cars Project</title>
+    <base href="/">
     <meta content="" name="description">
     <link href="favicon.ico" rel="shortcut icon">
-    <link href="cars/cars-min.css" rel="stylesheet">
+
+    <!-- build:css cars.css-->
+    <!-- bower:css-->
+    <!-- endbower-->
+    <link href="cars.css" rel="stylesheet">
+
+    <!-- endbuild-->
+
   </head>
   <body>
     <header>
-      <p>Project Name Ricardo</p>
+      <p>Cars</p>
     </header>
     <loading ng-show="loadingData"></loading>
     <div ui-view class="container"></div>
-    <footer></footer>
-    <!-- build:js cars/cars-min.js-->
+
+    <!-- build:js cars.js-->
     <!-- bower:js-->
     <!-- endbower-->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/commons/services/LazyLoaderService.js"></script>
-    <script src="scripts/commons/directives/loading/main.js"></script>
-    <script src="scripts/routes/route.js"></script>
+
+    <!-- Core -->
+    <script src="core/modules/coreCommons.js"></script>
+    <script src="core/modules/coreDirectives.js"></script>
+    <script src="core/modules/coreServices.js"></script>
+
+    <script src="core/providers/lazyLoaderProvider.js"></script>
+    <script src="core/services/storageService.js"></script>
+    <script src="core/components/loading/main.js"></script>
+
+    <!-- Cars -->
+    <script src="cars.js"></script>
+    <script src="modules/carsConstants.js"></script>
+    <script src="modules/carsDirectives.js"></script>
+    <script src="modules/carsFactories.js"></script>
+    <script src="modules/carsFilters.js"></script>
+    <script src="modules/carsServices.js"></script>
+
+    <!-- Cars Login -->
+    <script src="modules/login/loginRouter.js"></script>
+    <script src="modules/login/loginController.js"></script>
+
     <!-- endbuild-->
+
   </body>
 </html>

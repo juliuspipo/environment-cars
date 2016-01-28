@@ -5,7 +5,7 @@ var webServerProxies = {
 
 var proxyParam = (config.args.proxy && config.args.proxy === 'mocks') ? 'mocks' : 'real';
 
-config.gulp.task('dev-server', function () {
+config.gulp.task('dev-server', function dev() {
   return config.gulp.src(config.buildEnv.DEV_DIR)
   .pipe(config.webServer({
     livereload: true,
@@ -19,7 +19,7 @@ config.gulp.task('dev-server', function () {
   }));
 });
 
-config.gulp.task('prod-server', function () {
+config.gulp.task('prod-server', function prod() {
   return config.gulp.src(config.buildEnv.PROD_DIR)
   .pipe(config.webServer({
     livereload: true,

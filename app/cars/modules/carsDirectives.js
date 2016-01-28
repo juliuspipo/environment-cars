@@ -1,5 +1,5 @@
 (function wrapper() {
   'use strict';
 
-  angular.module('carsDirectives', ['appDirectives']);
+  angular.module('carsDirectives', ['coreDirectives']);
 })();

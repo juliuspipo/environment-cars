@@ -1,0 +1,10 @@
+<div class="container-login">
+  <form name="loginForm" ng-submit="loginForm.$valid && loginController.authenticate()">
+    <div class="container-data">
+      <label>Name:</label>  
+      <input ng-model="loginController.user.name" type="text"></input>
+      <label>Password:</label>
+      <input ng-model="loginController.user.secret" type="password"></input>
+    </div>
+  </form>
+</div>

@@ -1,14 +1,21 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('cars.login', ['ngRoute'])
+  angular.module('cars.login')
+    .controller('LoginController', LoginController);
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'LoginController'
-  });
-}])
+  function LoginController(loginFactory) {
 
-.controller('LoginController', [function() {
+    this.authenticate = function authenticate() {
+      loginFactory
+        .authenticate(this.user)
+        .then(this.afterGet.bind(this));   
+    };
+  }
 
-}]);
+  LoginController.prototype.afterGet = function afterGet(data) {
+    this.profile = data;
+
+    return this;
+  };
+})();

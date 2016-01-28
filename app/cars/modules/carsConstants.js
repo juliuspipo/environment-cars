@@ -1,5 +1,5 @@
 (function wrapper() {
   'use strict';
 
-  angular.module('carsConstants', ['appConstants']);
+  angular.module('carsConstants', ['coreConstants']);
 })();

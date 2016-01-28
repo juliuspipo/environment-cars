@@ -1,2 +1,3 @@
-@import '../styles/includes/base'
-@import '../commons/components/loading/main'
+@import '../commons/styles/layout'
+
+@import '../commons/components/loading/*'

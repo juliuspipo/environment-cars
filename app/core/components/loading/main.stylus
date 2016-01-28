@@ -13,7 +13,7 @@
     display block
 
   > span
-    background url(../assets/images/componentes/espera.gif)
+    background url(espera.gif)
     display block
     height 50px
     margin 25% auto 0

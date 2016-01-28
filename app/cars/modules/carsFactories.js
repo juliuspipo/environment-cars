@@ -1,5 +1,5 @@
 (function wrapper() {
   'use strict';
 
-  angular.module('carsFactories', ['appFactories']);
+  angular.module('carsFactories', []);
 })();

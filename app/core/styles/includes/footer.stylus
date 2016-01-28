@@ -1,0 +1,6 @@
+.footer-container
+  background-color gray
+  &.child-container
+    background-color green
+    with 500px
+    height 400px

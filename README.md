@@ -13,5 +13,6 @@ Tasks:
 | Deploy production environment | `gulp prod app_name`|
 | Build distribution | `gulp dist app_name`|
 | Execute UT | `gulp test app_name`|
-| Execute IT | `gulp protractor app_name`|
+| Execute CT | `gulp test-complexity app_name`|
+| Execute IT | `gulp test-protractor app_name`|
 | Generate CHANGELOG.md | `gulp changelog`|

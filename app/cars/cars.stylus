@@ -1,3 +1,0 @@
-@import '../commons/styles/layout'
-
-@import '../commons/components/loading/*'

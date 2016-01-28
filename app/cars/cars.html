@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="ProjectName">
+  <head>
+    <meta charset="utf-8">
+    <title>Project Name</title>
+    <meta content="" name="description">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="cars/cars-min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <p>Project Name Ricardo</p>
+    </header>
+    <loading ng-show="loadingData"></loading>
+    <div ui-view class="container"></div>
+    <footer></footer>
+    <!-- build:js cars/cars-min.js-->
+    <!-- bower:js-->
+    <!-- endbower-->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/commons/services/LazyLoaderService.js"></script>
+    <script src="scripts/commons/directives/loading/main.js"></script>
+    <script src="scripts/routes/route.js"></script>
+    <!-- endbuild-->
+  </body>
+</html>

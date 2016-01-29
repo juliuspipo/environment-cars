@@ -11,11 +11,7 @@ config.gulp.task('dev-server', function dev() {
     livereload: true,
     directoryListing: false,
     open: 'http://localhost:' + config.buildEnv.DEV_PORT + '/',
-    port: config.buildEnv.DEV_PORT,
-    proxies: [{
-      'source': '/api',
-      'target': webServerProxies[proxyParam]
-    }]
+    port: config.buildEnv.DEV_PORT
   }));
 });
 
@@ -25,10 +21,6 @@ config.gulp.task('prod-server', function prod() {
     livereload: true,
     directoryListing: false,
     open: 'http://localhost:' + config.buildEnv.PROD_PORT + '/',
-    port: config.buildEnv.PROD_PORT,
-    proxies: [{
-      'source': '/api',
-      'target': webServerProxies[proxyParam]
-    }]
+    port: config.buildEnv.PROD_PORT
   }));
 });

@@ -14,7 +14,7 @@ config.gulp.task('copy-views', copy(process.env.APP_SRC + '/src/**/*.html', conf
 
 config.gulp.task('copy-assets', copy(process.env.APP_SRC + '/assets/**/*', config.buildEnv.TEMP_DIR + '/assets'));
 
-config.gulp.task('copy-vendors', copy(config.buildEnv.VENDOR_DIR + '/**/*', config.buildEnv.TEMP_DIR + '/vendor'));
+config.gulp.task('copy-vendors', copy(config.buildEnv.VENDOR_DIR + '/**/*', config.buildEnv.TEMP_DIR + process.env.APP_VENDOR));
 
 config.gulp.task('copy', function copy(cb) {
   return config.runSequence('copy-index', 'copy-html', 'copy-views', 'copy-assets', 'copy-vendors', cb);

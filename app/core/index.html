@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="core">
+  <head>
+    <meta charset="utf-8">
+    <title>Core Project</title>
+    <base href="/">
+    <meta content="" name="description">
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- build:css core/core.css-->
+    <!-- bower:css-->
+    <!-- endbower-->
+    <!-- endbuild-->
+  </head>
+  <body>
+    <header>
+      <p>Core hola asdd sss</p>
+    </header>
+    <loading ng-show="loadingData"></loading>
+    <div ui-view class="container"></div>
+    <!-- build:js core/core.js-->
+    <!-- bower:js-->
+    <!-- endbower-->
+    <script src="core.js"></script>
+    <script src="modules/coreConstants.js"></script>
+    <script src="modules/coreCommons.js"></script>
+    <script src="modules/coreDirectives.js"></script>
+    <script src="modules/coreFactories.js"></script>
+    <script src="modules/coreFilters.js"></script>
+    <script src="modules/coreServices.js"></script>
+    <script src="components/loading/loading.js"></script>
+    <script src="providers/lazyloaderProvider.js"></script>
+    <script src="services/storageService.js"></script>
+    <script src="filters/fiveMaskFilter.js"></script>
+    <script src="factories/patternsFactory.js"></script>
+    <!-- endbuild-->
+  </body>
+</html>

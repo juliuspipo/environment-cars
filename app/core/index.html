@@ -6,10 +6,8 @@
     <base href="/">
     <meta content="" name="description">
     <link href="favicon.ico" rel="shortcut icon">
-    <!-- build:css core/core.css-->
     <!-- bower:css-->
     <!-- endbower-->
-    <!-- endbuild-->
   </head>
   <body>
     <header>
@@ -17,22 +15,22 @@
     </header>
     <loading ng-show="loadingData"></loading>
     <div ui-view class="container"></div>
-    <!-- build:js core/core.js-->
     <!-- bower:js-->
     <!-- endbower-->
-    <script src="core.js"></script>
+    <script src="modules/coreTemplates.js"></script>
     <script src="modules/coreConstants.js"></script>
     <script src="modules/coreCommons.js"></script>
     <script src="modules/coreDirectives.js"></script>
     <script src="modules/coreFactories.js"></script>
     <script src="modules/coreFilters.js"></script>
     <script src="modules/coreServices.js"></script>
+    <script src="coreTemplates.js"></script>
+    <script src="core.js"></script>
 
     <script src="src/components/loading/loading.js"></script>
     <script src="src/providers/lazyloaderProvider.js"></script>
     <script src="src/services/storageService.js"></script>
     <script src="src/filters/fiveMaskFilter.js"></script>
     <script src="src/factories/patternsFactory.js"></script>
-    <!-- endbuild-->
   </body>
 </html>

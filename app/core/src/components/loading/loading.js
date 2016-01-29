@@ -8,7 +8,7 @@
     return {
       replace: true,
       restrict: 'EA',
-      templateUrl: '/src/components/loading/loading.html'
+      templateUrl: 'core/src/components/loading/loading.html'
     };
   }
 })();

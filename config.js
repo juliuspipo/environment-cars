@@ -27,6 +27,7 @@ module.exports = {
   plato: require('plato'),
   rimraf: require('gulp-rimraf'),
   runSequence: require('run-sequence'),
+  templateCache: require('gulp-angular-templatecache'),
   uglify: require('gulp-uglify'),
   useref: require('gulp-useref'),
   util: require("gulp-util"),

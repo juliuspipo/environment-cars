@@ -1,7 +1,7 @@
 'use strict';
 
 config.gulp.task('dev', function start(cb) {
-  return config.runSequence('clean', 'scripts', 'copy', 'less', 'vendors', 'copy-dev', 'dev-server', cb);
+  return config.runSequence('clean', 'scripts', 'copy', 'templatesCore', 'templatesApp', 'less', 'vendors', 'copy-dev', 'dev-server', cb);
 });
 
 config.gulp.task('prod', function dist(cb) {

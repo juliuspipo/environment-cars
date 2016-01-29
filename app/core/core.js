@@ -1,9 +1,7 @@
 (function () {
   'use strict';
 
-  var core;
-
-  core = angular.module('core', ['coreConstants', 'coreDirectives', 'coreFactories', 'coreFilters', 'coreServices'])
+  var core = angular.module('core', ['coreConstants', 'coreDirectives', 'coreFactories', 'coreFilters', 'coreServices'])
     .config(configCore);
 
   function configCore($compileProvider, $controllerProvider, $provide) {

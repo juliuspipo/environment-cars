@@ -22,13 +22,13 @@ function deleteLibs() {
 }
 
 function distCss() {
-  return config.gulp.src(config.buildEnv.PROD_DIR + '/**/*.css')
+  return config.gulp.src(config.buildEnv.PROD_DIR + process.env.APP_SUFIX + '.css')
   .pipe(config.minifyCSS())
   .pipe(config.gulp.dest(config.buildEnv.PROD_DIR))
 }
 
 function distHtml() {
-  return config.gulp.src(config.buildEnv.PROD_DIR + '/**/*.html')
+  return config.gulp.src(config.buildEnv.PROD_DIR + process.env.APP_SUFIX + '.html')
   .pipe(config.minifyHTML({
     collapseWhitespace: true
   }))
@@ -36,7 +36,7 @@ function distHtml() {
 }
 
 function distScripts() {
-  return config.gulp.src(config.buildEnv.PROD_DIR + '/**/*.js')
+  return config.gulp.src(config.buildEnv.PROD_DIR + process.env.APP_SUFIX + '.js')
   .pipe(config.uglify())
   .pipe(config.gulp.dest(config.buildEnv.PROD_DIR))
 }

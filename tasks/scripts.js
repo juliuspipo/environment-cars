@@ -1,8 +1,7 @@
 'use strict';
 
 function scripts() {
-
-  return config.gulp.src([process.env.APP_SRC + '/**/*.js'])
+  return config.gulp.src([process.env.APP_SRC + process.env.APP_SUFIX + '.js'])
   .pipe(config.changed(config.buildEnv.TEMP_DIR))
   .pipe(config.jsHint(config.buildEnv.JS_HINT_FILE))
   .pipe(config.annotate(config.buildEnv.TEMP_DIR))

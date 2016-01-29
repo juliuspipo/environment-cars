@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('cars.login')
+  angular.module('cars')
     .controller('LoginController', LoginController);
 
   function LoginController(loginFactory) {

@@ -1,31 +1,50 @@
 'use strict';
 
+var ASSETS = process.env.APP_SRC + config.buildEnv.ASSETS_DIR.split('.').pop() + process.env.APP_SUFIX;
+var CORE_SRC = config.buildEnv.APP_DIR + '/core' + process.env.APP_SUFIX;
+var CORE = [CORE_SRC, '!' + CORE_SRC + '.spec.js', '!' + config.buildEnv.APP_DIR + '/core/' + '*.html'];
+var INDEXES = process.env.APP_SRC + '/*.html';
+var SCRIPTS = config.buildEnv.APP_DIR + process.env.APP_SUFIX + '.js';
+var STYLES = config.buildEnv.APP_DIR + process.env.APP_SUFIX + '.less';
+var VENDORS = config.buildEnv.VENDOR_DIR + process.env.APP_SUFIX;
+var VIEWS = process.env.APP_SRC + '/src' +  process.env.APP_SUFIX + '.html';
+
 var copy = function (src, dest) {
   return function () {
-      return config.gulp.src(src).pipe(config.gulp.dest(dest));
+      return config.gulp.src(src)
+      .pipe(config.gulp.dest(dest));
   };
 };
 
-config.gulp.task('copy-index', copy(process.env.APP_SRC + '/*.html', config.buildEnv.TEMP_DIR));
+config.gulp.task('copy-assets', copy(ASSETS, config.buildEnv.TEMP_DIR + '/assets'));
+config.gulp.task('copy-core', copy(CORE, config.buildEnv.TEMP_DIR + '/core'));
+config.gulp.task('copy-indexes', copy(INDEXES, config.buildEnv.TEMP_DIR));
+config.gulp.task('copy-styles', copy(STYLES, config.buildEnv.TEMP_DIR + '/styles'));
+config.gulp.task('copy-vendors', copy(VENDORS, config.buildEnv.TEMP_DIR + process.env.APP_VENDOR));
+config.gulp.task('copy-views', copy(VIEWS, config.buildEnv.TEMP_DIR + '/src'));
 
-config.gulp.task('copy-html', copy(process.env.APP_SRC + '/**/*.html', config.buildEnv.TEMP_DIR));
+config.gulp.task('watch-assets', copy(ASSETS, config.buildEnv.DEV_DIR));
+config.gulp.task('watch-views', copy(VIEWS, config.buildEnv.DEV_DIR));
+config.gulp.task('watch-indexes', copy(INDEXES, config.buildEnv.DEV_DIR));
+config.gulp.task('watch-scripts', copy(SCRIPTS, config.buildEnv.DEV_DIR));
+config.gulp.task('watch-styles', copy(STYLES, config.buildEnv.DEV_DIR));
 
-config.gulp.task('copy-views', copy(process.env.APP_SRC + '/src/**/*.html', config.buildEnv.TEMP_DIR + '/src'));
-
-config.gulp.task('copy-assets', copy(process.env.APP_SRC + '/assets/**/*', config.buildEnv.TEMP_DIR + '/assets'));
-
-config.gulp.task('copy-vendors', copy(config.buildEnv.VENDOR_DIR + '/**/*', config.buildEnv.TEMP_DIR + process.env.APP_VENDOR));
-
-config.gulp.task('copy', function copy(cb) {
-  return config.runSequence('copy-index', 'copy-html', 'copy-views', 'copy-assets', 'copy-vendors', cb);
-});
+if (process.env.APP_NAME === 'core') {
+  config.gulp.task('copy', function copy(cb) {
+    return config.runSequence('copy-assets', 'copy-views', 'copy-vendors', 'copy-indexes', cb);
+  });
+} else {
+  config.gulp.task('copy', function copy(cb) {
+    return config.runSequence('copy-assets', 'copy-views', 'copy-vendors', 'copy-indexes', 'copy-core', cb);
+  });
+}
 
 config.gulp.task('copy-dev', function copyDev() {
-  return config.gulp.src([config.buildEnv.TEMP_DIR + '/**/*', '!' + config.buildEnv.TEMP_DIR + '/**/*.spec.js'])
+  return config.gulp.src([config.buildEnv.TEMP_DIR + process.env.APP_SUFIX, '!' + config.buildEnv.TEMP_DIR + process.env.APP_SUFIX + '.spec.js'])
   .pipe(config.gulp.dest(config.buildEnv.DEV_DIR));
 });
 
 config.gulp.task('copy-prod', function copyProd() {
-  return config.gulp.src([config.buildEnv.TEMP_DIR + '/**/*.*', '!' + config.buildEnv.TEMP_DIR + '/**/*.spec.js'])
+  return config.gulp.src([config.buildEnv.TEMP_DIR + process.env.APP_SUFIX + '.*', '!' + config.buildEnv.TEMP_DIR + process.env.APP_SUFIX + '.spec.js'])
   .pipe(config.gulp.dest(config.buildEnv.PROD_DIR));
 });

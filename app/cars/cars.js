@@ -1,9 +1,7 @@
 (function () {
   'use strict';
 
-  var cars;
-
-  cars = angular.module('cars', [
+  var cars = angular.module('cars', [
     'carsConstants',
     'carsDirectives',
     'carsFactories',
@@ -12,7 +10,7 @@
   ])
     .config(configProviders);
 
-  function configProviders($controllerProvider, $provide, $urlRouterProvider) {
+  function configProviders($compileProvider, $controllerProvider, $provide, $urlRouterProvider) {
     cars.controller = $controllerProvider.register;
     cars.directive = $compileProvider.directive;
     cars.factory = $provide.factory;

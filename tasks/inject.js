@@ -1,10 +1,14 @@
 'use strict';
 
-function injectScripts() {
+function inject() {
+  var sources = config.gulp.src([
+      config.buildEnv.TEMP_DIR + process.env.APP_DIR + '/' + process.env.APP_NAME +  process.env.APP_SUFIX + '.js',
+      config.buildEnv.TEMP_DIR + '/styles/' + process.env.APP_NAME + '.css'
+    ], { read: false });
 
-  return config.gulp.src([process.env.APP_SRC + '/**/*.js'])
-  .pipe(config.inject(gulp.src(fileDir, {read: false}), {relative: true}))
-  .pipe(config.gulp.dest(config.build));
+  return config.gulp.src(config.buildEnv.TEMP_DIR + '/*.html')
+  .pipe(config.inject(sources, { relative: true }))
+  .pipe(config.gulp.dest(config.buildEnv.TEMP_DIR));
 }
 
-config.gulp.task('injectScripts', injectScripts);
+config.gulp.task('inject', inject);

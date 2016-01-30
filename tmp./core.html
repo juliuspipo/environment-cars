@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="core">
+  <head>
+    <meta charset="utf-8">
+    <title>Core Project</title>
+    <base href="/">
+    <meta content="" name="description">
+    <link href="favicon.ico" rel="shortcut icon">
+    <!-- bower:css-->
+    <link rel="stylesheet" href="vendor/ui-select/dist/select.css" />
+    <link rel="stylesheet" href="vendor/animate.css/animate.css" />
+    <!-- endbower-->
+  </head>
+  <body>
+    <header>
+      <p>Core</p>
+    </header>
+    <loading ng-show="loadingData"></loading>
+    <div ui-view class="container"></div>
+    <!-- bower:js-->
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-mocks/angular-mocks.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="vendor/angular-messages/angular-messages.js"></script>
+    <script src="vendor/angular-animate/angular-animate.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+    <script src="vendor/angular-ui-scroll/dist/ui-scroll.js"></script>
+    <script src="vendor/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
+    <script src="vendor/angular-ui-event/dist/event.js"></script>
+    <script src="vendor/angular-ui-mask/dist/mask.js"></script>
+    <script src="vendor/angular-ui-validate/dist/validate.js"></script>
+    <script src="vendor/angular-ui-indeterminate/dist/indeterminate.js"></script>
+    <script src="vendor/angular-ui-uploader/dist/uploader.js"></script>
+    <script src="vendor/angular-ui-utils/index.js"></script>
+    <script src="vendor/angular-cookies/angular-cookies.js"></script>
+    <script src="vendor/ui-select/dist/select.js"></script>
+    <script src="vendor/script.js/dist/script.js"></script>
+    <script src="vendor/i18next/bin/index.js"></script>
+    <script src="vendor/ng-i18next/dist/ng-i18next.js"></script>
+    <!-- endbower-->
+    <script src="core/modules/coreTemplates.js"></script>
+    <script src="core/modules/coreConstants.js"></script>
+    <script src="core/modules/coreCommons.js"></script>
+    <script src="core/modules/coreDirectives.js"></script>
+    <script src="core/modules/coreFactories.js"></script>
+    <script src="core/modules/coreFilters.js"></script>
+    <script src="core/modules/coreServices.js"></script>
+    <script src="coreTemplates.js"></script>
+    <script src="core.js"></script>
+
+    <script src="core/components/loading/loading.js"></script>
+    <script src="core/providers/lazyloaderProvider.js"></script>
+    <script src="core/services/storageService.js"></script>
+    <script src="core/filters/fiveMaskFilter.js"></script>
+    <script src="core/factories/patternsFactory.js"></script>
+  </body>
+</html>

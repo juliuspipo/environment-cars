@@ -1,13 +1,16 @@
 module.exports = {
   buildEnv: {
-    APP_DIR: './app',
+    APP_DIR: './apps',
+    APP_FULL_DIR: './src/apps',
+    APP_SRC: './src',
     BUILD_DIR: './tasks',
+    CORE_DIR: './core',
     DEV_DIR: './dev',
     METRICS_DIR: './metrics',
     PROD_DIR: './dist',
     TEMP_DIR: './tmp',
     VENDOR_DIR: './vendor',
-    ASSETS_DIR: './assets',
+    ASSETS_DIR: '/assets',
     JS_HINT_FILE: '.jshintrc',
     DEV_PORT: 9000,
     PROD_PORT: 8080
@@ -15,6 +18,7 @@ module.exports = {
   annotate: require('gulp-ng-annotate'),
   args: require('yargs').argv,
   changed: require('gulp-changed'),
+  foreach: require('gulp-foreach'),
   gulp: require('gulp'),
   inject: require('gulp-inject'),
   jsHint: require('gulp-jshint'),

@@ -1,9 +1,9 @@
 'use strict';
 
 function less() {
-  return config.gulp.src(process.env.APP_SRC +  process.env.APP_SUFIX + '/.less')
+  return config.gulp.src(config.buildEnv.APP_SRC +  process.env.APP_SUFIX + '.less')
   .pipe(config.less({
-    paths: [config.path.join(__dirname, 'less', 'includes')]
+    paths: ['includes', 'components', 'layout', 'layouts']
   }))
   .pipe(config.gulp.dest(config.buildEnv.TEMP_DIR));
 }

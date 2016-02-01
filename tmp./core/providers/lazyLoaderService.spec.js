@@ -1,8 +1,8 @@
 'use strict';
 
-describe('core', function () {
+describe('coreServices', function () {
   beforeEach(function() {
-    angular.module('core');
+    angular.module('coreServices');
   });
 
   describe('LazyLoader', function () { 

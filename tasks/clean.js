@@ -12,11 +12,11 @@ process.env.APP_SRC = config.buildEnv.APP_FULL_DIR + '/' + process.env.APP_NAME;
 process.env.APP_SUFIX = '/**/*';
 process.env.APP_VENDOR = config.buildEnv.VENDOR_DIR.split('.').pop();
 
-function clean() {
+var clean = function clean() {
   return config.gulp.src(dirs, { read: false })
   .pipe(config.rimraf().on('error', function error(error) {
     console.log(error);
   }));
-}
+};
 
 config.gulp.task('clean', clean);

@@ -1,22 +1,31 @@
 'use strict'
 
-function watchIndexes() {
-  return config.runSequence('copy-indexes', 'vendors', 'watch-indexes');
-}
+var COMPONENTS = config.buildEnv.APP_SRC + '/core/components' + process.env.APP_SUFIX + '.html';
+var INDEXES = config.buildEnv.APP_SRC + '/*.html';
+var SCRIPTS = config.buildEnv.APP_SRC + process.env.APP_SUFIX + '.js';
+var STYLES = config.buildEnv.APP_SRC + process.env.APP_SUFIX + '.less';
+var VIEWS = [config.buildEnv.APP_SRC + process.env.APP_SUFIX + '.html', '!' + config.buildEnv.APP_SRC + '/*.html', '!' + COMPONENTS];
 
-function watchScripts() {
-  return config.runSequence('less', 'watch-styles');
-}
+var indexes = function indexes() {
+  return config.runSequence('copyViews', 'vendors', 'inject', 'copyIndexes');
+};
 
-function watchStyles() {
-  return config.runSequence('scripts', 'watch-scripts');
-}
+config.gulp.watch(COMPONENTS, ['templatesCore']).on('change', function(file) {
+  config.gutil.log(config.gutil.colors.blue('HTML COMPONENT changed' + ' (' + file.path + ')'));
+});
 
-function watchViews() {
-  return config.runSequence('copy-views', 'watch-views');
-}
+config.gulp.watch(INDEXES, indexes).on('change', function(file) {
+  config.gutil.log(config.gutil.colors.blue('INDEX changed' + ' (' + file.path + ')'));
+});
 
-config.gulp.watch(config.buildEnv.APP_DIR + process.env.APP_SUFIX + '.js', watchScripts);
-config.gulp.watch(config.buildEnv.APP_DIR + process.env.APP_SUFIX + '.less', watchStyles);
-config.gulp.watch([config.buildEnv.APP_DIR + process.env.APP_SUFIX + '.html', '!' + process.env.APP_SRC + '/*.html' ], watchViews);
-config.gulp.watch(process.env.APP_SRC + '/*.html', watchIndexes);
+config.gulp.watch(SCRIPTS, ['scripts']).on('change', function(file) {
+  config.gutil.log(config.gutil.colors.red('JS changed' + ' (' + file.path + ')'));
+});
+
+config.gulp.watch(STYLES, ['less']).on('change', function(file) {
+  config.gutil.log(config.gutil.colors.yellow('LESS changed' + ' (' + file.path + ')'));
+});
+
+config.gulp.watch(VIEWS, ['copyViews']).on('change', function(file) {
+  config.gutil.log(config.gutil.colors.yellow('HTML changed' + ' (' + file.path + ')'));
+});

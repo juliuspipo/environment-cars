@@ -20,6 +20,7 @@ module.exports = {
   changed: require('gulp-changed'),
   foreach: require('gulp-foreach'),
   gulp: require('gulp'),
+  gutil: require('gulp-util'),
   inject: require('gulp-inject'),
   jsHint: require('gulp-jshint'),
   karma: require('karma'),

@@ -1,34 +1,50 @@
 'use strict'
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
-    autoWatch: false,
-    basePath: 'tmp/',
-    dieOnError: false,
+    autoWatch: true,
+    basePath: './tmp',
+    dieOnError: true,
     singleRun: true,
-
     browsers: ['PhantomJS'],
+    exclude: [],
+    files: [
+      'vendor/angular/angular.js',
+      'vendor/angular-ui-router/release/angular-ui-router.min.js',
+      'vendor/angular-mocks/angular-mocks.js',
+      'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
+      'vendor/angular-sanitize/angular-sanitize.min.js',
+      'vendor/script.js/dist/script.min.js',
+      'vendor/angular-messages/angular-messages.min.js',
+      'vendor/angular-ui-scroll/dist/ui-scroll.js',
+      'vendor/angular-ui-scrollpoint/dist/scrollpoint.js',
+      'vendor/angular-ui-event/dist/event.js',
+      'vendor/angular-ui-mask/dist/mask.js',
+      'vendor/angular-ui-validate/dist/validate.js',
+      'vendor/angular-ui-indeterminate/dist/indeterminate.js',
+      'vendor/angular-ui-uploader/dist/uploader.js',
+      'vendor/angular-ui-utils/index.js',
+      'vendor/angular-cookies/angular-cookies.js',
+      'vendor/i18next/bin/index.js',
+      'vendor/ng-i18next/dist/ng-i18next.js',
+      'core/modules/coreTemplates.js',
+      'core/modules/coreCommons.js',
+      'core/modules/coreDirectives.js',
+      'core/modules/coreConstants.js',
+      'core/modules/coreServices.js',
+      'core/modules/coreFactories.js',
+      'core/modules/coreFilters.js',
+      'coreTemplates.js',
+      'core/**/*.js',
+      'cars.js',
+      'apps/cars/**/*.js',
+      '**/*.html'
+    ],
     coverageReporter: {
       dir: '../coverage/',
       includeAllSources: true,
       type: 'html'
     },
-    exclude: [],
-    files: [
-      '../vendor/angular/angular.js',
-      '../vendor/angular-ui-router/release/angular-ui-router.min.js',
-      '../vendor/angular-mocks/angular-mocks.js',
-      '../vendor/angular-sanitize/angular-sanitize.min.js',
-      '../vendor/script.js/dist/script.min.js',
-      '../vendor/ramda/dist/ramda.min.js',
-      '../vendor/angular-strap/dist/angular-strap.min.js',
-      '../vendor/angular-strap/dist/angular-strap.tpl.min.js',
-      '../vendor/ui-router/release/angular-ui-router.min.js',
-      'scripts/main.js',
-      'scripts/**/*.js',
-      'index.html',
-      'views/**/*.html'
-    ],
     frameworks: ['jasmine'],
     reporters: ['progress', 'coverage'],
     plugins: [
@@ -36,6 +52,9 @@ module.exports = function(config) {
       'karma-phantomjs-launcher',
       'karma-jasmine',
       'karma-coverage'
-    ]
+    ],
+    preprocessors: {
+      '**/*spec.js': ['coverage']
+    }
   });
 };

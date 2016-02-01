@@ -1,7 +1,7 @@
 'use strict';
 
 config.gulp.task('dev', function dev(cb) {
-  return config.runSequence('clean', 'scripts', 'copy', 'less', 'vendors', 'inject', 'templatesCore', 'copy-dev', 'dev-server', cb);
+  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'devServer', cb);
 });
 
 config.gulp.task('prod', function prod(cb) {
@@ -13,7 +13,7 @@ config.gulp.task('dist', function dist(cb) {
 });
 
 config.gulp.task('test', function test(cb) {
-  return config.runSequence('clean', 'scripts', 'copy', 'less', 'vendors', 'copy-dev', 'karma', cb);
+  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'karma', cb);
 });
 
 config.gulp.task('metrics', function metrics(cb) {

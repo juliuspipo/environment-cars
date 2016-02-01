@@ -29,6 +29,8 @@ module.exports = {
   minifyCSS: require('gulp-cssnano'),
   minifyHTML: require('gulp-htmlmin'),  
   path: require('path'),
+  open: require('open'),
+  path: require('path'),
   plato: require('plato'),
   rimraf: require('gulp-rimraf'),
   runSequence: require('run-sequence'),

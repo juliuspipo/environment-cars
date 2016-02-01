@@ -45,6 +45,7 @@
     "karma-coverage": "~0.2.7",
     "karma-jasmine": "^0.3.2",
     "karma-phantomjs-launcher": "^0.1.4",
+    "open": "0.0.5",
     "plato": "^1.5.0",
     "protractor": "^3.0.0",
     "require-dir": "^0.3.0",

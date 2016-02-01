@@ -16,8 +16,8 @@ config.gulp.task('test', function test(cb) {
   return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'karma', cb);
 });
 
-config.gulp.task('metrics', function metrics(cb) {
-  return config.runSequence('clean', 'scripts', 'copy', 'less', 'vendors', 'copy-dev', 'plato', cb);
+config.gulp.task('test-complexity', function testComplexity(cb) {
+  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'metrics', cb);
 });
 
 //'templatesCore', 'templatesApp', 'less', 'vendors', 'copy-dev', 'dev-server',

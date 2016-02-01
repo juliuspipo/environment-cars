@@ -1,5 +1,7 @@
 'use strict';
 
+var KARMA_ROUTE_FILE = config.path.join('./', 'karma.conf.js');
+
 var runKarma = function (configFilePath, options, cb) {
   configFilePath = config.path.resolve(configFilePath);
 
@@ -10,17 +12,15 @@ var runKarma = function (configFilePath, options, cb) {
 
   server.start(configuration, function (exitCode) {
     log('Karma has exited with ' + colors.red(exitCode));
-
     cb();
     process.exit(exitCode);
   });
 };
 
-var KARMA_ROUTE_FILE = config.path.join('./', 'karma.conf.js');
-
 config.gulp.task('karma', function (done) {
+
   runKarma(KARMA_ROUTE_FILE, {
-    //browsers: ['Chrome'],
-    //singleRun: false
+    browsers: [process.env.KARMA_BROWSER],
+    singleRun: process.env.KARMA_RUN !== 'false'
   }, done);
 });

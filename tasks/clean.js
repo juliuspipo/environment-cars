@@ -1,6 +1,6 @@
 'use strict';
 
-var dirs = [config.buildEnv.DEV_DIR, config.buildEnv.TEMP_DIR, config.buildEnv.PROD_DIR, config.buildEnv.METRICS_DIR];
+var dirs = [config.buildEnv.DEV_DIR, config.buildEnv.TEMP_DIR, config.buildEnv.PROD_DIR, config.buildEnv.METRICS_DIR, config.buildEnv.METRICS_DIR, config.buildEnv.COVERAGE_DIR];
 
 process.env.APP_CORE = 'core'
 process.env.APP_DIR = config.buildEnv.APP_DIR.split('.').pop();
@@ -11,6 +11,9 @@ process.env.APP_PORT = config.args.port || 5101;
 process.env.APP_SRC = config.buildEnv.APP_FULL_DIR + '/' + process.env.APP_NAME;
 process.env.APP_SUFIX = '/**/*';
 process.env.APP_VENDOR = config.buildEnv.VENDOR_DIR.split('.').pop();
+
+process.env.KARMA_BROWSER = config.args.browser || 'PhantomJS'
+process.env.KARMA_RUN = config.args.run;
 
 var clean = function clean() {
   return config.gulp.src(dirs, { read: false })

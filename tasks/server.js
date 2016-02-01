@@ -20,7 +20,7 @@ config.gulp.task('devServer', function dev() {
 config.gulp.task('prodServer', function prod() {
   return config.gulp.src(config.buildEnv.PROD_DIR)
   .pipe(config.webServer({
-    livereload: true,
+    livereload: false,
     directoryListing: false,
     open: 'http://localhost:' + config.buildEnv.PROD_PORT + '/',
     port: config.buildEnv.PROD_PORT

@@ -2,12 +2,13 @@
 
 module.exports = function (config) {
   config.set({
-    autoWatch: true,
+    autoWatch: false,
     basePath: './tmp',
-    dieOnError: true,
+    dieOnError: false,
     singleRun: true,
-    browsers: ['PhantomJS'],
-    exclude: [],
+    exclude: [
+      'core.html'
+    ],
     files: [
       'vendor/angular/angular.js',
       'vendor/angular-ui-router/release/angular-ui-router.min.js',
@@ -37,8 +38,8 @@ module.exports = function (config) {
       'coreTemplates.js',
       'core/**/*.js',
       'cars.js',
-      'apps/cars/**/*.js',
-      '**/*.html'
+      'cars.html',
+      'apps/cars/**/*.js'
     ],
     coverageReporter: {
       dir: '../coverage/',

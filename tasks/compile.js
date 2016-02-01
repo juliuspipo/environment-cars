@@ -1,15 +1,24 @@
 'use strict';
 
+var exit = function exit(error) {
+  if (error) {
+    console.log('[ERROR] gulp build task failed', err);
+    return process.exit(0);
+  } else {
+    return process.exit(0);
+  }
+};
+
 config.gulp.task('dev', function dev(cb) {
   return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'devServer', cb);
 });
 
 config.gulp.task('prod', function prod(cb) {
-  return config.runSequence('clean', 'scripts', 'copy', 'less', 'vendors', 'copy-prod', 'prod-one-script', 'prod-vendors', 'prod-scripts', 'prod-html', 'prod-css', 'prod-server', cb);
+  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'prodServer', cb);
 });
 
 config.gulp.task('dist', function dist(cb) {
-  return config.runSequence('clean', 'scripts', 'copy', 'less', 'vendors', 'copy-prod', 'prod-one-script', 'prod-vendors', 'prod-scripts', 'prod-html', 'prod-css', 'prod-server', cb);
+  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'karma', cb);
 });
 
 config.gulp.task('test', function test(cb) {
@@ -19,5 +28,3 @@ config.gulp.task('test', function test(cb) {
 config.gulp.task('test-complexity', function testComplexity(cb) {
   return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'metrics', cb);
 });
-
-//'templatesCore', 'templatesApp', 'less', 'vendors', 'copy-dev', 'dev-server',

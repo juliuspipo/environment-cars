@@ -1,8 +1,10 @@
-# Environment Cars Project
+# Environment Project
 
-## Entorno de desarrollo
+## Environment for scalable Web Apps
 
-Tasks:
+### This development environment is thinking for Web Applications that contains a common core and n layers of integration.
+
+Gulp Tasks:
 
 | Task | Command |
 |---|---|

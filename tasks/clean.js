@@ -1,6 +1,6 @@
 'use strict';
 
-var dirs = [config.buildEnv.DEV_DIR, config.buildEnv.TEMP_DIR, config.buildEnv.PROD_DIR, config.buildEnv.METRICS_DIR, config.buildEnv.METRICS_DIR, config.buildEnv.COVERAGE_DIR];
+var dirs = [config.buildEnv.DEV_DIR, config.buildEnv.TEMP_DIR, config.buildEnv.PROD_DIR, config.buildEnv.METRICS_DIR, config.buildEnv.COVERAGE_DIR];
 
 process.env.APP_CORE = 'core'
 process.env.APP_DIR = config.buildEnv.APP_DIR.split('.').pop();

@@ -20,7 +20,6 @@ module.exports = {
   args: require('yargs').argv,
   changed: require('gulp-changed'),
   changelog: require('conventional-changelog'),
-  foreach: require('gulp-foreach'),
   fs: require('fs'),
   gulp: require('gulp'),
   gulpIf: require('gulp-if'),

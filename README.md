@@ -6,13 +6,10 @@ Tasks:
 
 | Task | Command |
 |---|---|
-| Install all libraries for environment | `npm install`|
-| Install all libraries for frontend | `bower install`|
-| Deploy develop environment | `gulp dev app_name`|
-| Deploy develop environment + UT | `gulp cert app_name`|
-| Deploy production environment | `gulp prod app_name`|
-| Build distribution | `gulp dist app_name`|
-| Execute UT | `gulp test app_name`|
-| Execute CT | `gulp test-complexity app_name`|
-| Execute IT | `gulp test-protractor app_name`|
+| Install all libraries for environment | `npm i`|
+| Deploy develop environment | `gulp dev --name=app_name`|
+| Deploy production environment | `gulp prod --name=app_name`|
+| Build distribution + UT (PhantomJS and SingleRun) | `gulp dist --name=app_name`|
+| Execute UT | `gulp test --name=app_name --browser=browser_name --run=single_run_value`|
+| Execute CT | `gulp test-complexity --name=app_name`|
 | Generate CHANGELOG.md | `gulp changelog`|

@@ -1,11 +1,17 @@
 {
-  "name": "environment-cars-frontend",
-  "version": "1.0.0",
+  "name": "environment-cars",
+  "version": "0.0.0",
   "description": "This is a environment for support all the SDLC to a frontend layer",
   "main": "index.js",
   "scripts": {
+    "start": "gulp dev",
+    "test": "gulp test",
     "postinstall": "bower install",
     "prestart": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rpinaa/environment-cars.git"
   },
   "keywords": [
     "environment",
@@ -20,6 +26,7 @@
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
+    "conventional-changelog": "^0.5.3",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-changed": "^1.3.0",

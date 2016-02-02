@@ -9,6 +9,10 @@ var exit = function exit(error) {
   }
 };
 
+config.gulp.task('changelogs', function changelogs(cb) {
+  return config.runSequence('clean', 'changelog', exit);
+});
+
 config.gulp.task('dev', function dev(cb) {
   return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'devServer', cb);
 });

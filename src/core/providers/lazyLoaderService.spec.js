@@ -1,14 +1,11 @@
 'use strict';
 
 describe('coreServices', function () {
-  beforeEach(function() {
+  beforeEach(function () {
     angular.module('coreServices');
   });
 
   describe('LazyLoader', function () { 
-    var ctrlAlias;
-    var element;
-    var nextState;
     var scope;
 
     beforeEach(inject(function ($injector) {

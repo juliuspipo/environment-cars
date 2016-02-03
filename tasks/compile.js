@@ -14,21 +14,21 @@ config.gulp.task('changelogs', function changelogs(cb) {
 });
 
 config.gulp.task('dev', function dev(cb) {
-  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'devServer', cb);
-});
-
-config.gulp.task('prod', function prod(cb) {
-  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'prodServer', cb);
+  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'devServer', cb);
 });
 
 config.gulp.task('dist', function dist(cb) {
-  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'karma', cb);
+  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'karma', cb);
+});
+
+config.gulp.task('prod', function prod(cb) {
+  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'prodServer', cb);
 });
 
 config.gulp.task('test', function test(cb) {
-  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'karma', cb);
+  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'karma', cb);
 });
 
 config.gulp.task('test-complexity', function testComplexity(cb) {
-  return config.runSequence('clean', 'scripts', 'copyViews', 'copyAssets', 'copyVendors', 'less', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'metrics', cb);
+  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'metrics', cb);
 });

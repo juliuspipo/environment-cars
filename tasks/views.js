@@ -2,7 +2,7 @@
 
 var VIEWS = config.buildEnv.APP_SRC + process.env.APP_SUFIX + '.html';
 
-var copyViews = function copyViews() {
+var views = function views() {
   return config.gulp.src(VIEWS)
   .pipe(config.changed(config.buildEnv.TEMP_DIR), {extension: 'html'})
   .pipe(config.changed(config.buildEnv.DEV_DIR), {extension: 'html'})
@@ -10,4 +10,4 @@ var copyViews = function copyViews() {
   .pipe(config.gulp.dest(config.buildEnv.TEMP_DIR));
 };
 
-config.gulp.task('copyViews', copyViews);
+config.gulp.task('views', views);

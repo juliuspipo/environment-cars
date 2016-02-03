@@ -49,7 +49,7 @@ folders in your project.
 environment-cars changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
-### Configure general file
+### Configure the general file
 
 The environment-cars repository has a config.js file in root path; this file contains all the global task inputs and libraries required. The default configuration is::
 

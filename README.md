@@ -51,7 +51,7 @@ it easier to serve the files by a webserver.*
 
 ### Configure the general file
 
-The environment-cars repository has a config.js file in root path; this file contains all the global task inputs and libraries required. The default configuration is::
+The environment-cars repository has a `config.js` file in root path; this file contains all the global task inputs and libraries required. The default configuration is:
 
 ```
 buildEnv: {

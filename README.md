@@ -49,6 +49,43 @@ folders in your project.
 environment-cars changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
+### Configure general file
+
+The environment-cars repository has a config.js file in root path; this file contains all the global task inputs and libraries required. The default configuration is::
+
+```
+buildEnv: {
+  APP_DIR: './apps',
+  APP_FULL_DIR: './src/apps',
+  APP_SRC: './src',
+  ASSETS_DIR: '/assets',
+  BUILD_DIR: './tasks',
+  CORE_DIR: './core',
+  COVERAGE_DIR: './coverage',
+  DEFAULT_KARMA_BROWSER: 'PhantomJS',
+  DEFAULT_SERVER_PORT: 5101,
+  DEV_DIR: './dev',
+  JS_HINT_FILE: '.jshintrc',
+  METRICS_DIR: './metrics',
+  PROD_DIR: './prod',
+  TEMP_DIR: './tmp',
+  VENDOR_DIR: './vendor'
+},
+tasksEnv: {
+  stylesPaths: ['includes', 'components', 'layout', 'layouts'],
+  stylesSufix: 'less'
+}
+```
+
+Where `buildEnv` describe the name of the files created in runtime and `taskEnv` the name of the values inputs of tasks, each described as follow:
+
+```
+stylesPaths: contains all the paths in the styles folder where can put, include or import another style sheet
+```
+```
+stylesSufix: contains the description of the compress language for style sheets, by default is less, but can be `less or sass`
+```
+
 ## Deploy Applications
 
 ### Run the Application in DEV environment

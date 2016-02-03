@@ -7,7 +7,7 @@ var STYLES = config.buildEnv.APP_SRC + process.env.APP_SUFIX + '.' + config.task
 var VIEWS = [config.buildEnv.APP_SRC + process.env.APP_SUFIX + '.html', '!' + config.buildEnv.APP_SRC + '/*.html', '!' + COMPONENTS];
 
 var indexes = function indexes() {
-  return config.runSequence('copyViews', 'vendors', 'inject', 'copyIndexes');
+  return config.runSequence('views', 'vendors', 'inject', 'copyIndexes');
 };
 
 config.gulp.watch(COMPONENTS, ['templatesCore']).on('change', function(file) {

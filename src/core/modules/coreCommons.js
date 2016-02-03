@@ -8,7 +8,6 @@
     'ngMessages',
     'ui.router',
     'ui.bootstrap',
-    'ui.select',
     'ui.validate'
   ]);
 })();

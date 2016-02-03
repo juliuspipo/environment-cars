@@ -15,6 +15,7 @@ module.exports = function (config) {
       'vendor/angular-mocks/angular-mocks.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
       'vendor/angular-sanitize/angular-sanitize.min.js',
+      'vendor/angular-animate/angular-animate.min.js',
       'vendor/script.js/dist/script.min.js',
       'vendor/angular-messages/angular-messages.min.js',
       'vendor/angular-ui-scroll/dist/ui-scroll.js',

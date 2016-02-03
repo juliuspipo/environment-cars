@@ -5,9 +5,9 @@ var KARMA_ROUTE_FILE = config.path.join('./', 'karma.conf.js');
 var runKarma = function (configFilePath, options, cb) {
   configFilePath = config.path.resolve(configFilePath);
 
-  var colors = config.util.colors;
+  var colors = config.gutil.colors;
   var configuration = config.karmaConfig(configFilePath, options);
-  var log = config.util.log;
+  var log = config.gutil.log;
   var server = config.karma.server;
 
   server.start(configuration, function (exitCode) {

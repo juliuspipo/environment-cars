@@ -26,11 +26,12 @@ describe('PatternsFactory', function() {
 				['ric.globant.com', false],
 				['@globant.com', false],
 				['ricardo.lyon@globant', false],
-				['', false]
+				['', false],
+				[null, false],
+				[undefined, false]
 			],
 			function (a, b) {
 				var test = patternsFactory.email.test(a);
-				console.log('TEST: ' + test);
 				expect(test).toBe(b);
 			}
 		)

@@ -6,6 +6,7 @@ var karma = function karma(done) {
   var karmaConfigFile = config.path.resolve(KARMA_ROUTE_FILE);
 
   new config.karma.Server({
+    autoWatch: process.env.KARMA_RUN === 'false',
     browsers: [process.env.KARMA_BROWSER],
     configFile: karmaConfigFile,
     singleRun: process.env.KARMA_RUN !== 'false'

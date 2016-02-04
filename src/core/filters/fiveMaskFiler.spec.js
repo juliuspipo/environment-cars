@@ -8,7 +8,9 @@ describe("Five Mask", function(){
 
   it("it should be undefined ", inject(function (fiveMaskFilterFilter){
       var digit = 123;
-      expect(fiveMaskFilterFilter(digit)).not.toBeDefined();
+      expect(function(){
+        fiveMaskFilterFilter(digit)
+      }).toThrowError(TypeError);
     }));
 
   it("it return ***** in the beginning", inject(function (fiveMaskFilterFilter){

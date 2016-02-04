@@ -7,7 +7,12 @@
     function FiveMaskFilter () {
       return function maskFilter(text) {
         if (text) {
-          var cardCodified = text.substr(0,5);
+          var cardCodified;
+          try{
+           cardCodified = text.substr(0,5);
+          }catch(error){
+            throw new TypeError("Invalid data");
+          }
 
           return text.replace(cardCodified, '*****');
         } else {

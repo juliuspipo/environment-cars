@@ -11,21 +11,21 @@ var indexes = function indexes() {
 };
 
 config.gulp.watch(COMPONENTS, ['templatesCore']).on('change', function(file) {
-  config.gutil.log(config.gutil.colors.blue('HTML COMPONENT changed' + ' (' + file.path + ')'));
+  config.util.log(config.util.colors.blue('HTML COMPONENT changed' + ' (' + file.path + ')'));
 });
 
 config.gulp.watch(INDEXES, indexes).on('change', function(file) {
-  config.gutil.log(config.gutil.colors.blue('INDEX changed' + ' (' + file.path + ')'));
+  config.util.log(config.util.colors.blue('INDEX changed' + ' (' + file.path + ')'));
 });
 
 config.gulp.watch(SCRIPTS, ['scripts']).on('change', function(file) {
-  config.gutil.log(config.gutil.colors.red('JS changed' + ' (' + file.path + ')'));
+  config.util.log(config.util.colors.red('JS changed' + ' (' + file.path + ')'));
 });
 
 config.gulp.watch(STYLES, ['styles']).on('change', function(file) {
-  config.gutil.log(config.gutil.colors.yellow('STYLES changed' + ' (' + file.path + ')'));
+  config.util.log(config.util.colors.yellow('STYLES changed' + ' (' + file.path + ')'));
 });
 
 config.gulp.watch(VIEWS, ['views']).on('change', function(file) {
-  config.gutil.log(config.gutil.colors.yellow('VIEWS changed' + ' (' + file.path + ')'));
+  config.util.log(config.util.colors.yellow('VIEWS changed' + ' (' + file.path + ')'));
 });

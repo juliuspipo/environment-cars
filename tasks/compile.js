@@ -18,11 +18,11 @@ config.gulp.task('dev', function dev(cb) {
 });
 
 config.gulp.task('dist', function dist(cb) {
-  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'karma', cb);
+  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'minifyIndex', 'karma', cb);
 });
 
 config.gulp.task('prod', function prod(cb) {
-  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'prodServer', cb);
+  return config.runSequence('clean', 'scripts', 'views', 'copyAssets', 'copyVendors', 'styles', 'vendors', 'inject', 'copyIndexes', 'templatesCore', 'minifyOneScript', 'minifyHtml', 'minifyScripts', 'minifyIndex', 'prodServer', cb);
 });
 
 config.gulp.task('test', function test(cb) {

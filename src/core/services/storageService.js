@@ -1,4 +1,4 @@
-(function wrapper() {
+(function () {
   'use strict';
 
   angular.module('coreServices')

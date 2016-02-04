@@ -2,7 +2,7 @@
 
 describe('PatternsFactory', function() {
 	
-		beforeEach(module('coreFactories'));
+	beforeEach(module('coreFactories'));
 
 	describe('patternsFactory', function() {
 		var patternsFactory;

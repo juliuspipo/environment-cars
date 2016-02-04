@@ -21,6 +21,7 @@ config.gulp.task('karma', function (done) {
 
   runKarma(KARMA_ROUTE_FILE, {
     browsers: [process.env.KARMA_BROWSER],
-    singleRun: process.env.KARMA_RUN !== 'false'
+    singleRun: process.env.KARMA_RUN !== 'false',
+    autoWatch: process.env.KARMA_RUN === 'false'
   }, done);
 });

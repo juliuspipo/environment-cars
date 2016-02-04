@@ -39,5 +39,8 @@
     "script.js": "scriptjs#^2.5.8",
     "ng-i18next": "^0.5.2",
     "animate.css": "animate-css#^3.5.1"
+  },
+  "devDependencies": {
+    "jasmine-data_driven_tests": "~1.0"
   }
 }

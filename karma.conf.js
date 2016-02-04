@@ -10,6 +10,7 @@ module.exports = function (config) {
       'core.html'
     ],
     files: [
+      'vendor/jasmine-data_driven_tests/src/all.js',
       'vendor/angular/angular.js',
       'vendor/angular-ui-router/release/angular-ui-router.min.js',
       'vendor/angular-mocks/angular-mocks.js',

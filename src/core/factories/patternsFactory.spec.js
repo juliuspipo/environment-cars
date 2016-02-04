@@ -12,18 +12,7 @@ describe('PatternsFactory', function() {
 		}));
 
 		all('properties should be defined', 
-			[
-				'address',
-				'curp',
-				'email',
-				'file',
-				'number',
-				'password',
-				'questions',
-				'police',
-				'spanish',
-				'numbers'
-			],
+			['address', 'curp', 'email', 'file', 'number', 'password', 'questions', 'police', 'spanish', 'numbers'],
 			function (a) {
 				expect(patternsFactory[a]).toBeDefined();
 			}

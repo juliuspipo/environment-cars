@@ -10,12 +10,13 @@
   ])
     .config(configProviders);
 
-  function configProviders($compileProvider, $controllerProvider, $provide, $urlRouterProvider) {
+  function configProviders($compileProvider, $controllerProvider, $locationProvider, $provide, $urlRouterProvider) {
     cars.controller = $controllerProvider.register;
     cars.directive = $compileProvider.directive;
     cars.factory = $provide.factory;
     cars.service = $provide.service;
 
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   }
 })();

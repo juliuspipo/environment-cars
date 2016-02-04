@@ -11,7 +11,7 @@ var karma = function karma(done) {
     singleRun: process.env.KARMA_RUN !== 'false'
   })
   .start(karmaConfigFile, function (exitCode) {
-    config.gutil.log('Karma has exited with ' + colors.red(exitCode));
+    config.util.log('Karma has exited with ' + colors.red(exitCode));
     done();
     process.exit(exitCode);
   });

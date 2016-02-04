@@ -1,9 +1,9 @@
 coverage
-dev
 metrics
 node_modules
 prod
 tmp/
+tmp_dev/
 vendor
 **/.DS_Store
 .tmp

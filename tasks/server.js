@@ -12,7 +12,7 @@ config.gulp.task('devServer', function dev() {
   .pipe(config.webServer({
     livereload: true,
     directoryListing: false,
-    open: 'http://localhost:' + process.env.APP_PORT + '/',
+    open: 'http://localhost:' + process.env.APP_PORT,
     port: process.env.APP_PORT
   }));
 });
@@ -22,7 +22,7 @@ config.gulp.task('prodServer', function prod() {
   .pipe(config.webServer({
     livereload: false,
     directoryListing: false,
-    open: 'http://localhost:' + process.env.APP_PORT + '/',
+    open: 'http://localhost:' + process.env.APP_PORT,
     port: process.env.APP_PORT
   }));
 });

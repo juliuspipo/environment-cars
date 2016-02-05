@@ -17,7 +17,7 @@ var views = function views() {
     src = src.pipe(config.jade(COMPILER));
   }
 
-  src
+  return src
   .pipe(config.gulp.dest(config.buildEnv.DEV_DIR))
   .pipe(config.gulp.dest(config.buildEnv.TEMP_DIR));
 };

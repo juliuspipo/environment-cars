@@ -66,6 +66,18 @@ describe('PatternsFactory', function() {
 			}
 		);
 
+		all('file names should be tested', 
+			[
+				['file.jpg', false],
+				['', true],
+				[null, false],
+				[undefined, false]
+			],
+			function (a, expected) {
+				expect(patternsFactory.file.test(a)).toBe(expected);
+			}
+		);
+
 	});
 
 });

@@ -18,6 +18,18 @@ describe('PatternsFactory', function() {
 			}
 		);
 
+		all('CURPs should be tested',
+			[
+				['validcurp', true],
+				['validcurp', true],
+				['INvalidcurp', false],
+				['INvalidCURP', false]
+			],
+			function (a, expected) {
+				expect(patternsFactory.curp.test(a)).toBe(expected);
+			}
+		);
+
 		all('strings should be tested against email pattern', 
 			[
 				['ricardo.lyon@globant.com', true],
@@ -30,11 +42,12 @@ describe('PatternsFactory', function() {
 				[null, false],
 				[undefined, false]
 			],
-			function (a, b) {
-				var test = patternsFactory.email.test(a);
-				expect(test).toBe(b);
+			function (a, expected) {
+				expect(patternsFactory.email.test(a)).toBe(expected);
 			}
-		)
+		);
+
+
 	});
 
 });

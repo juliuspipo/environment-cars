@@ -79,19 +79,32 @@ describe('PatternsFactory', function() {
 			}
 		);
 
-		all('number be tested', 
+		xall('number be tested', 
 			[
-				[123, false],
-				['123', false],
-				['', false],
-				[null, false],
-				[undefined, false]
+				[123, true],
+				[123.23, true],
+				['123', true],
+				['123.23', true],
+				['1,123.23', true],
+				['1.123,23', true],
+				['123as', false],
+				['', false]
 			],
 			function (a, expected) {
 				expect(patternsFactory.number.test(a)).toBe(expected);
 			}
 		);
 
+		all('password should be tested', 
+			[
+				['pa$$w0rdFr5m-H3ll', true],
+				['123', false],
+				['', false]
+			],
+			function (a, expected) {
+				expect(patternsFactory.password.test(a)).toBe(expected);
+			}
+		);
 
 	});
 

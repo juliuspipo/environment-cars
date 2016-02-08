@@ -68,15 +68,18 @@ describe('PatternsFactory', function() {
 
 		all('file names should be tested', 
 			[
-				['file.jpg', false],
-				['', true],
-				[null, false],
-				[undefined, false]
+				['file.jpg', true],
+				['file.jpg.3928132', true],
+				[123, true],
+				['file.jpg.@!#!.JPG', false],
+				['', false]
 			],
 			function (a, expected) {
 				expect(patternsFactory.file.test(a)).toBe(expected);
 			}
 		);
+
+
 
 	});
 

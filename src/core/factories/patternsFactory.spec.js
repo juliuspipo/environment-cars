@@ -20,10 +20,16 @@ describe('PatternsFactory', function() {
 
 		all('CURPs should be tested',
 			[
-				['validcurp', true],
-				['validcurp', true],
+				['LOCR750827HBCDEF01', true],
+				['locr750827hbcdef01', true],
+				['LOCR750827MBCDEF01', true],
+				['locr750827Mbcdef01', true],
+				['LOCR750827ABCDEF01', false],
 				['INvalidcurp', false],
-				['INvalidCURP', false]
+				['INvalidCURP', false],
+				['', false],
+				[null, false],
+				[undefined, false]
 			],
 			function (a, expected) {
 				expect(patternsFactory.curp.test(a)).toBe(expected);

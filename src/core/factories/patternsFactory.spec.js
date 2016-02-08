@@ -18,6 +18,19 @@ describe('PatternsFactory', function() {
 			}
 		);
 
+		all('addresses should be tested', 
+			[
+				['Av. Insurgentes Sur 859 Piso 15, Benito Juarez, Nápoles, 03100 Ciudad de México, D.F.', true],
+				['@#$@%$^&', false],
+				['', false],
+				[null, false],
+				[undefined, false]
+			],
+			function (a, expected) {
+				expect(patternsFactory.address.test(a)).toBe(expected);
+			}
+		);
+
 		all('CURPs should be tested',
 			[
 				['LOCR750827HBCDEF01', true],
@@ -52,7 +65,6 @@ describe('PatternsFactory', function() {
 				expect(patternsFactory.email.test(a)).toBe(expected);
 			}
 		);
-
 
 	});
 

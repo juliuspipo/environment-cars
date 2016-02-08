@@ -9,9 +9,8 @@ describe("Loading", function(){
                }));
 
   it("should be contain Cargando datos", function (){
-        	 element = $compile('<loading></loading>')($rootScope);
-           $rootScope.$digest();
-          console.log(element.html());
-          expect(element.html()).toContain('Cargando datos');
+    element = $compile('<loading></loading>')($rootScope);
+    $rootScope.$digest();
+    expect(element.html()).toContain('Cargando datos');
   });
 });

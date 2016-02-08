@@ -5,7 +5,8 @@ describe("Storage service", function(){
   beforeEach(module("coreServices"));
 
   beforeEach(inject(function(_StorageService_){
-     storageService = _StorageService_
+    storageService = _StorageService_;
+    storageService.clear();
   }));
 
   it("it should be null", function(){
@@ -14,10 +15,10 @@ describe("Storage service", function(){
   });
 
   it("it should be Hello", function(){
-      var greeting = "Hello "
-      storageService.setItem("greeting", greeting);
-      var result = storageService.getItem("greeting");
-      expect(result).toEqual(greeting);
-    });
+    var greeting = "Hello "
+    storageService.setItem("greeting", greeting);
+    var result = storageService.getItem("greeting");
+    expect(result).toEqual(greeting);
+  });
 
 });

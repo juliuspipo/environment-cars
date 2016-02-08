@@ -22,6 +22,9 @@
           if (key && value) {
             storageBox[key] = value;
           }
+        },
+        clear: function clear() {
+          storageBox = {};
         }
       };
     }
@@ -38,6 +41,10 @@
 
     this.setItem = function setItem(key, value) {
       storage.setItem(key, JSON.stringify(value));
+    };
+
+    this.clear = function clear() {
+      storage.clear();
     };
 
     return this;

@@ -15,10 +15,9 @@ describe("Storage service", function(){
   });
 
   it("it should be Hello", function(){
-    var greeting = "Hello "
+    var greeting = "Hello";
     storageService.setItem("greeting", greeting);
-    var result = storageService.getItem("greeting");
-    expect(result).toEqual(greeting);
+    expect(storageService.getItem("greeting")).toEqual(greeting);
   });
 
 });

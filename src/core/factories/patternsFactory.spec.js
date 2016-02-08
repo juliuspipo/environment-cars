@@ -79,6 +79,18 @@ describe('PatternsFactory', function() {
 			}
 		);
 
+		all('number be tested', 
+			[
+				[123, false],
+				['123', false],
+				['', false],
+				[null, false],
+				[undefined, false]
+			],
+			function (a, expected) {
+				expect(patternsFactory.number.test(a)).toBe(expected);
+			}
+		);
 
 
 	});
